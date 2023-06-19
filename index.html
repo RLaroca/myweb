@@ -5,108 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Object</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 
-<!--CSS-->
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        body{
-            background-color: rgb(0, 0, 0);
-        }
-        /* nav e menus*/
-        nav{
-            display: flex;
-            min-height: 65px;
-            width: 100vw;
-            height: 10vh;
-            background-color: grey;
-            box-shadow: 0px 2px 4px 0px rgb(172, 172, 172);
-            justify-content: center;
-        }
-        a{
-            text-decoration: none;
-            font-family: arial;
-            padding-right: 7px;
-            padding-left: 7px;
-            color:white;
-        }
-        a:hover{
-            box-shadow: 1px 1px 1px 1px rgb(172, 172, 172);
-        } 
-        #logo{
-            display: flex;
-            font-size: 20pt;
-            max-height: 25pt;
-            color: white;
-            text-transform: uppercase;
-            margin: 0 auto;
-        }
-        #mobile{
-            display: flex;
-        }
-       #menuMobile{
-            display: block;
-        }
-        #menuMobile{
-            display: block;
-            background-color: rgba(93, 93, 93, 0.5);
-            color: white;
-            width: 50vw;
-            height: 100vh;
-            padding-top: 50px;
-            padding-left: 10px;
-            position: absolute;  
-        }
-        #menuMobile a{
-            display: block;
-            justify-content: left;
-        }
-        .icon{
-            position:absolute;
-        }
-        @media screen and (max-width: 600px){
-            #logo{
-            font-size: 20pt;
-            color: white;
-            text-transform: uppercase;
-            margin: 0 auto;
-            margin-top: 10px;           
-            }          
-            #menuDesk{
-                display: none;
-            }
-            #menuMobile{
-                display: none;
-            }
-            a{
-                padding: 10px;
-            }
-        }
-        @media screen and (min-width: 601px){
-            #mobile{
-                display: none;
-            } 
-            nav {
-                display: flex;
-                flex-direction: column;
-            }
-            #menuDesk{
-            max-height: 15pt;
-            font-size: 10pt;
-            display: flex;
-            justify-content: center;
-            align-items: flex-end; 
-            margin-top: 5px; 
-            }
-        }
-        /*encerra nav e menus */
 
-        /**/
-    </style>
-<!--Fecha CSS-->
+   
 
 </head>
 <body>
@@ -130,49 +32,7 @@
 
 </body>
 
-<!--JS-->
-<script>
-    var menu = {
-        HOME: "home.html",
-        CONTENT: "content.html",
-        CONTACT: "contact.html"
-    }
-    var menuMobile = document.getElementById("menuMobile");
-    var menuDesk = document.getElementById("menuDesk");
 
+<script src="script.js"></script>
 
-    //função para chamar os links do objeto nos menus
-    function links(dvc){
-        for (var [key, value] of Object.entries(menu)){
-            var link = value;
-            var name = key;
-            var a = document.createElement("a");
-            a.setAttribute("href", value)
-            a.textContent = key;
-            dvc.append(a);
-        }
-    }
-    links(menuDesk);
-    links(menuMobile)
-    
-
-    function myFunction() {
-    var x = document.getElementById("menuMobile");
-    if (x.style.display === "block") {
-      x.style.display = "none";
-      
-    } else {
-      x.style.display = "block";
-      
-    }
-  var y = document.getElementById("burg");
-    if(x.style.display === "block"){
-        y.innerHTML = "close";
-    } else{
-        y.innerHTML = "menu";
-    }
-    
-  }
-</script>
-<!--Fecha JS-->
 </html>
